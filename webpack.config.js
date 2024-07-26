@@ -25,6 +25,10 @@ module.exports = {
                 type: "asset/resource",
             },
             {
+                test: /\.html$/i,
+                loader: "html-loader",
+            },
+            {
                 test: /\.(?:js|mjs|cjs)$/,
                 exclude: /node_modules/,
                 use: {
@@ -45,6 +49,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./src/index.html",
+            favicon: "",
         }),
     ],
 };
